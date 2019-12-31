@@ -1,0 +1,25 @@
+{
+	"manifest_version": 2,
+	"name": "WoWProgress Selector",
+	"description": "Make it easy to select every member of the guild for invidual update queue.",
+	"version": "1.0",
+	"permissions": [
+		"activeTab"
+	],
+	"content_scripts": [
+		{
+			"matches": [
+				"https://www.wowprogress.com/update_progress/guild/*",
+				"http://www.wowprogress.com/update_progress/guild/*"
+			],
+			"js": ["jquery-2.2.0.min.js", "content.js"]
+		}
+	],
+	"background": {
+		"scripts": ["background.js"],
+		"persistent": false
+	},
+	"browser_action": {
+		"default_title": "Select every guild member for invidual update queue"
+	}
+}
